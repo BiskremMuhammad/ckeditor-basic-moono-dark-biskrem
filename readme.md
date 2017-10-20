@@ -1,3 +1,87 @@
+### CKEditor Basic Dark Skin
+
+##### by **Biskrem** - Basend on "Moono"
+---
+
+> first of all a screnshot:
+
+![CKEditor Moono Basic Dark Theme by Biskrem Screenshot](https://github.com/BiskremMuhammad/ckeditor-basic-moono-dark-biskrem/blob/master/screenshot.png "CKEditor Moono Basic Dark Theme by Biskrem")
+
+## Setup
+
+* first install CKEditor, as for laravel project [follow these steps](https://stackoverflow.com/a/46838583/4846859).
+
+* after successfully get it to work, add this skin folder to CKEditor `skins` folder, for laravel you will find it in the path:
+
+
+```
+public/vendor/unisharp/laravel-ckeditor/skins
+```
+
+* right after pasting this folder into the `skins` Directory, open `config.js` form CKEditor Base Directory - `public/vendor/unisharp/laravel-ckeditor` for laravel - **AND Replace its content with this:**
+
+```php
+/**
+ * @license Copyright (c) 2003-2017, CKSource - Frederico Knabben. All rights reserved.
+ * For licensing, see LICENSE.md or http://ckeditor.com/license
+ */
+
+CKEDITOR.editorConfig = function( config ) {
+	// Define changes to default configuration here.
+	// For complete reference see:
+	// http://docs.ckeditor.com/#!/api/CKEDITOR.config
+
+	// The toolbar groups arrangement, optimized for two toolbar rows.
+	config.toolbarGroups = [
+		{ name: 'basicstyles', groups: [ 'basicstyles', 'cleanup' ] },
+		{ name: 'paragraph',   groups: [ 'list', 'indent', 'blocks', 'align', 'bidi' ] },
+		{ name: 'styles' },
+		{ name: 'colors' }
+	];
+
+	// Remove some buttons provided by the standard plugins, which are
+	// not needed in the Standard(s) toolbar.
+	config.removeButtons = 'Underline,Subscript,Superscript';
+
+	// Set the most common block elements.
+	config.format_tags = 'p;h1;h2;h3;pre';
+
+	// Simplify the dialog windows.
+	config.removeDialogTabs = 'image:advanced;link:advanced';
+
+	config.skin = 'ckeditor-basic-moono-dark-biskrem';
+};
+```
+
+
+> EXPLANATION
+
+```php
+// The toolbar groups arrangement, optimized for two toolbar rows.
+	config.toolbarGroups = [
+		{ name: 'basicstyles', groups: [ 'basicstyles', 'cleanup' ] },
+		{ name: 'paragraph',   groups: [ 'list', 'indent', 'blocks', 'align', 'bidi' ] },
+		{ name: 'styles' },
+		{ name: 'colors' }
+	];
+```
+
+**this to minify the editor to the basic tools only**
+
+and finally this line of code:
+
+```php
+config.skin = 'ckeditor-basic-moono-dark-biskrem';
+```
+
+**to actually skin the editor to our dark theme** *`ckeditor-basic-moono-dark-biskrem` implies the skin folder name in `skins` folder*
+
+---
+---
+
+> Here is the rest of `README.md` of the original "Moono" skin that this one is based on
+
+
 "Moono" Skin
 ====================
 
